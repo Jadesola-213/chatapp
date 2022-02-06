@@ -1,0 +1,86 @@
+{
+    "sourceFile": "src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1644173519887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644173977840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import ChatFeed from './components/ChatFeed';\n import LoginForm from './components/LoginForm';\n import './App.css';\n \n-const projectID = '1b7801d6-8a66-4be4-a442-89219d833dfc';\n+const projectID = '';\n \n const App = () => {\n   if (!localStorage.getItem('username')) return <LoginForm />;\n \n"
+                },
+                {
+                    "date": 1644173986882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import ChatFeed from './components/ChatFeed';\n import LoginForm from './components/LoginForm';\n import './App.css';\n \n-const projectID = '';\n+const projectID = 'b7f4bda5-2a4e-4976-9804-5c2fa6718db8';\n \n const App = () => {\n   if (!localStorage.getItem('username')) return <LoginForm />;\n \n"
+                },
+                {
+                    "date": 1644174020447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n \n   return (\n     <ChatEngine\n       height=\"100vh\"\n-      projectID={projectID}\n+      projectID={\n+        b7f4bda5-2a4e-4976-9804-5c2fa6718db8}\n       userName={localStorage.getItem('username')}\n       userSecret={localStorage.getItem('password')}\n       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n"
+                },
+                {
+                    "date": 1644174031464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,9 @@\n \n   return (\n     <ChatEngine\n       height=\"100vh\"\n-      projectID={\n-        b7f4bda5-2a4e-4976-9804-5c2fa6718db8}\n+      projectID={b7f4bda5-2a4e-4976-9804-5c2fa6718db8\n       userName={localStorage.getItem('username')}\n       userSecret={localStorage.getItem('password')}\n       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n"
+                },
+                {
+                    "date": 1644174036759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n   return (\n     <ChatEngine\n       height=\"100vh\"\n-      projectID={b7f4bda5-2a4e-4976-9804-5c2fa6718db8\n+      projectID= \"b7f4bda5-2a4e-4976-9804-5c2fa6718db8\n       userName={localStorage.getItem('username')}\n       userSecret={localStorage.getItem('password')}\n       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n"
+                },
+                {
+                    "date": 1644174172666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n \n   return (\n     <ChatEngine\n       height=\"100vh\"\n-      projectID= \"b7f4bda5-2a4e-4976-9804-5c2fa6718db8\n-      userName={localStorage.getItem('username')}\n+      projectID= \"b7f4bda5-2a4e-4976-9804-5c2fa6718db8\"\n+      userName=\n       userSecret={localStorage.getItem('password')}\n       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n     />\n"
+                },
+                {
+                    "date": 1644174190261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n   return (\n     <ChatEngine\n       height=\"100vh\"\n       projectID= \"b7f4bda5-2a4e-4976-9804-5c2fa6718db8\"\n-      userName=\n-      userSecret={localStorage.getItem('password')}\n+      userName= \"chatapp\"\n+      userSecret=\"\"\n       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n     />\n   );\n"
+                },
+                {
+                    "date": 1644174195384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     <ChatEngine\n       height=\"100vh\"\n       projectID= \"b7f4bda5-2a4e-4976-9804-5c2fa6718db8\"\n       userName= \"chatapp\"\n-      userSecret=\"\"\n+      userSecret=\"Jadesola213$\"\n       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n     />\n   );\n"
+                },
+                {
+                    "date": 1644174309628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import { ChatEngine } from 'react-chat-engine';\n \n-import ChatFeed from './components/ChatFeed';\n-import LoginForm from './components/LoginForm';\n+\n import './App.css';\n \n const projectID = 'b7f4bda5-2a4e-4976-9804-5c2fa6718db8';\n \n@@ -13,9 +12,9 @@\n     <ChatEngine\n       height=\"100vh\"\n       projectID= \"b7f4bda5-2a4e-4976-9804-5c2fa6718db8\"\n       userName= \"chatapp\"\n-      userSecret=\"Jadesola213$\"\n+      userSecret= \"Jadesola213$\"\n       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n     />\n   );\n"
+                },
+                {
+                    "date": 1644174328366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { ChatEngine } from 'react-chat-engine';\n \n-\n+import ChatFeed from './components/ChatFeed';\n+import LoginForm from './components/LoginForm';\n import './App.css';\n \n const projectID = 'b7f4bda5-2a4e-4976-9804-5c2fa6718db8';\n \n"
+                },
+                {
+                    "date": 1644174352208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n const projectID = 'b7f4bda5-2a4e-4976-9804-5c2fa6718db8';\n \n const App = () => {\n-  if (!localStorage.getItem('username')) return <LoginForm />;\n+  if (!localStorage.getItem('username')) return <Login />;\n \n   return (\n     <ChatEngine\n       height=\"100vh\"\n"
+                },
+                {
+                    "date": 1644174357419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { ChatEngine } from 'react-chat-engine';\n \n import ChatFeed from './components/ChatFeed';\n-import LoginForm from './components/LoginForm';\n+import LoginForm from './components/Login';\n import './App.css';\n \n const projectID = 'b7f4bda5-2a4e-4976-9804-5c2fa6718db8';\n \n"
+                },
+                {
+                    "date": 1644174376642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { ChatEngine } from 'react-chat-engine';\n \n-import ChatFeed from './components/ChatFeed';\n+import ChatFeed from './components/ChatContent';\n import LoginForm from './components/Login';\n import './App.css';\n \n const projectID = 'b7f4bda5-2a4e-4976-9804-5c2fa6718db8';\n"
+                },
+                {
+                    "date": 1644174387882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { ChatEngine } from 'react-chat-engine';\n \n import ChatFeed from './components/ChatContent';\n-import LoginForm from './components/Login';\n+import Login from './components/Login';\n import './App.css';\n \n const projectID = 'b7f4bda5-2a4e-4976-9804-5c2fa6718db8';\n \n"
+                },
+                {
+                    "date": 1644174407438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { ChatEngine } from 'react-chat-engine';\n \n-import ChatFeed from './components/ChatContent';\n+import ChatContent from './components/ChatContent';\n import Login from './components/Login';\n import './App.css';\n \n const projectID = 'b7f4bda5-2a4e-4976-9804-5c2fa6718db8';\n"
+                },
+                {
+                    "date": 1644174423835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n       height=\"100vh\"\n       projectID= \"b7f4bda5-2a4e-4976-9804-5c2fa6718db8\"\n       userName= \"chatapp\"\n       userSecret= \"Jadesola213$\"\n-      renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n+      renderChatContent={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n     />\n   );\n };\n"
+                },
+                {
+                    "date": 1644174468459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n       height=\"100vh\"\n       projectID= \"b7f4bda5-2a4e-4976-9804-5c2fa6718db8\"\n       userName= \"chatapp\"\n       userSecret= \"Jadesola213$\"\n-      renderChatContent={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n+      renderChatContent={(chatAppProps) => <ChatContent {...chatAppProps} />}\n       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n     />\n   );\n };\n"
+                }
+            ],
+            "date": 1644173519887,
+            "name": "Commit-0",
+            "content": "import { ChatEngine } from 'react-chat-engine';\n\nimport ChatFeed from './components/ChatFeed';\nimport LoginForm from './components/LoginForm';\nimport './App.css';\n\nconst projectID = '1b7801d6-8a66-4be4-a442-89219d833dfc';\n\nconst App = () => {\n  if (!localStorage.getItem('username')) return <LoginForm />;\n\n  return (\n    <ChatEngine\n      height=\"100vh\"\n      projectID={projectID}\n      userName={localStorage.getItem('username')}\n      userSecret={localStorage.getItem('password')}\n      renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}\n      onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}\n    />\n  );\n};\n\n// infinite scroll, logout, more customizations...\n\nexport default App;\n"
+        }
+    ]
+}

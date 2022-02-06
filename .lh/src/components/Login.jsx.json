@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/Login.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1644174875487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644175717838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { useState } from 'react';\n import axios from 'axios';\n \n-const projectID = '1b7801d6-8a66-4be4-a442-89219d833dfc';\n+const projectID = 'b7f4bda5-2a4e-4976-9804-5c2fa6718db8';\n \n const Modal = () => {\n   const [username, setUsername] = useState('');\n   const [password, setPassword] = useState('');\n"
+                }
+            ],
+            "date": 1644174875487,
+            "name": "Commit-0",
+            "content": "import { useState } from 'react';\nimport axios from 'axios';\n\nconst projectID = '1b7801d6-8a66-4be4-a442-89219d833dfc';\n\nconst Modal = () => {\n  const [username, setUsername] = useState('');\n  const [password, setPassword] = useState('');\n  const [error, setError] = useState('');\n\n  const handleSubmit = async (e) => {\n    e.preventDefault();\n\n    const authObject = { 'Project-ID': projectID, 'User-Name': username, 'User-Secret': password };\n\n    try {\n      await axios.get('https://api.chatengine.io/chats', { headers: authObject });\n\n      localStorage.setItem('username', username);\n      localStorage.setItem('password', password);\n\n      window.location.reload();\n      setError('');\n    } catch (err) {\n      setError('Oops, incorrect credentials.');\n    }\n  };\n\n  return (\n    <div className=\"wrapper\">\n      <div className=\"form\">\n        <h1 className=\"title\">Chat Application</h1>\n        <form onSubmit={handleSubmit}>\n          <input type=\"text\" value={username} onChange={(e) => setUsername(e.target.value)} className=\"input\" placeholder=\"Username\" required />\n          <input type=\"password\" value={password} onChange={(e) => setPassword(e.target.value)} className=\"input\" placeholder=\"Password\" required />\n          <div align=\"center\">\n            <button type=\"submit\" className=\"button\">\n              <span>Start chatting</span>\n            </button>\n          </div>\n        </form>\n        <h1>{error}</h1>\n      </div>\n    </div>\n\n  );\n};\n\nexport default Modal;"
+        }
+    ]
+}

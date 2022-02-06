@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/UserChat.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1644174942669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644174970577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const MyMessage = ({ message }) => {\n+const MageyMess = ({ message }) => {\n     if (message.attachments && message.attachments.length > 0) {\n       return (\n         <img\n           src={message.attachments[0].file}\n"
+                },
+                {
+                    "date": 1644174976242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const MageyMess = ({ message }) => {\n+const UserChat = ({ message }) => {\n     if (message.attachments && message.attachments.length > 0) {\n       return (\n         <img\n           src={message.attachments[0].file}\n"
+                },
+                {
+                    "date": 1644174986923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,5 @@\n       </div>\n     );\n   };\n   \n-  export default MyMessage;\n\\ No newline at end of file\n+  export default UserChat;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1644174942669,
+            "name": "Commit-0",
+            "content": "const MyMessage = ({ message }) => {\n    if (message.attachments && message.attachments.length > 0) {\n      return (\n        <img\n          src={message.attachments[0].file}\n          alt=\"message-attachment\"\n          className=\"message-image\"\n          style={{ float: 'right' }}\n        />\n      );\n    }\n  \n    return (\n      <div className=\"message\" style={{ float: 'right', marginRight: '18px', color: 'white', backgroundColor: '#3B2A50' }}>\n        {message.text}\n      </div>\n    );\n  };\n  \n  export default MyMessage;"
+        }
+    ]
+}

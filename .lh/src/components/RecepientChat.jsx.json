@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/RecepientChat.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1644174926382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644175235182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const TheirMessage = ({ lastMessage, message }) => {\n+const RecepientChat = ({ lastMessage, message }) => {\n     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;\n   \n     return (\n       <div className=\"message-row\">\n"
+                }
+            ],
+            "date": 1644174926382,
+            "name": "Commit-0",
+            "content": "const TheirMessage = ({ lastMessage, message }) => {\n    const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;\n  \n    return (\n      <div className=\"message-row\">\n        {isFirstMessageByUser && (\n          <div\n            className=\"message-avatar\"\n            style={{ backgroundImage: message.sender && `url(${message.sender.avatar})` }}\n          />\n        )}\n        {message.attachments && message.attachments.length > 0\n          ? (\n            <img\n              src={message.attachments[0].file}\n              alt=\"message-attachment\"\n              className=\"message-image\"\n              style={{ marginLeft: isFirstMessageByUser ? '4px' : '48px' }}\n            />\n          )\n          : (\n            <div className=\"message\" style={{ float: 'left', backgroundColor: '#CABCDC', marginLeft: isFirstMessageByUser ? '4px' : '48px' }}>\n              {message.text}\n            </div>\n          )}\n      </div>\n    );\n  };\n  \n  export default TheirMessage;"
+        }
+    ]
+}

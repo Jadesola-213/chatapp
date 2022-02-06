@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/components/ChatContent.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1644174535889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644175012745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import MyMessage from './MyMessage';\n+import U from './MyMessage';\n import TheirMessage from './TheirMessage';\n import MessageForm from './MessageForm';\n \n const ChatFeed = (props) => {\n"
+                },
+                {
+                    "date": 1644175024239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import U from './MyMessage';\n+import UserChat from './UserChat';\n import TheirMessage from './TheirMessage';\n import MessageForm from './MessageForm';\n \n const ChatFeed = (props) => {\n"
+                },
+                {
+                    "date": 1644175033334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const { chats, activeChat, userName, messages } = props;\n \n   const chat = chats && chats[activeChat];\n \n-  const renderReadReceipts = (message, isMyMessage) => chat.people.map((person, index) => person.last_read === message.id && (\n+  const renderReadReceipts = (message, isUserChate) => chat.people.map((person, index) => person.last_read === message.id && (\n     <div\n       key={`read_${index}`}\n       className=\"read-receipt\"\n       style={{\n"
+                },
+                {
+                    "date": 1644175053615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n   const { chats, activeChat, userName, messages } = props;\n \n   const chat = chats && chats[activeChat];\n \n-  const renderReadReceipts = (message, isUserChate) => chat.people.map((person, index) => person.last_read === message.id && (\n+  const renderReadReceipts = (message, isUserChat) => chat.people.map((person, index) => person.last_read === message.id && (\n     <div\n       key={`read_${index}`}\n       className=\"read-receipt\"\n       style={{\n-        float: isMyMessage ? 'right' : 'left',\n+        float: isUserChat ? 'right' : 'left',\n         backgroundImage: person.person.avatar && `url(${person.person.avatar})`,\n       }}\n     />\n   ));\n"
+                },
+                {
+                    "date": 1644175064832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n     return keys.map((key, index) => {\n       const message = messages[key];\n       const lastMessageKey = index === 0 ? null : keys[index - 1];\n-      const isMyMessage = userName === message.sender.username;\n+      const isUserChat = userName === message.sender.username;\n \n       return (\n         <div key={`msg_${index}`} style={{ width: '100%' }}>\n           <div className=\"message-block\">\n"
+                },
+                {
+                    "date": 1644175075550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       return (\n         <div key={`msg_${index}`} style={{ width: '100%' }}>\n           <div className=\"message-block\">\n             {isMyMessage\n-              ? <MyMessage message={message} />\n+              ? <UserChat message={message} />\n               : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}\n           </div>\n           <div className=\"read-receipts\" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>\n             {renderReadReceipts(message, isMyMessage)}\n"
+                },
+                {
+                    "date": 1644175089337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n             {isMyMessage\n               ? <UserChat message={message} />\n               : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}\n           </div>\n-          <div className=\"read-receipts\" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>\n+          <div className=\"read-receipts\" style={{ marginRight: isUserChat ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>\n             {renderReadReceipts(message, isMyMessage)}\n           </div>\n         </div>\n       );\n"
+                },
+                {
+                    "date": 1644175097485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,10 @@\n             {isMyMessage\n               ? <UserChat message={message} />\n               : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}\n           </div>\n-          <div className=\"read-receipts\" style={{ marginRight: isUserChat ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>\n-            {renderReadReceipts(message, isMyMessage)}\n+          <div className=\"read-receipts\" style={{ marginRight: isUserChat ? '18px' : '0px', marginLeft: isUserChat ? '0px' : '68px' }}>\n+            {renderReadReceipts(message, isUserChate)}\n           </div>\n         </div>\n       );\n     });\n"
+                },
+                {
+                    "date": 1644175125036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import UserChat from './UserChat';\n import TheirMessage from './TheirMessage';\n import MessageForm from './MessageForm';\n \n-const ChatFeed = (props) => {\n+const ChatContent = (props) => {\n   const { chats, activeChat, userName, messages } = props;\n \n   const chat = chats && chats[activeChat];\n \n@@ -33,9 +33,9 @@\n               ? <UserChat message={message} />\n               : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}\n           </div>\n           <div className=\"read-receipts\" style={{ marginRight: isUserChat ? '18px' : '0px', marginLeft: isUserChat ? '0px' : '68px' }}>\n-            {renderReadReceipts(message, isUserChate)}\n+            {renderReadReceipts(message, isUserChat)}\n           </div>\n         </div>\n       );\n     });\n"
+                },
+                {
+                    "date": 1644175132262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,5 +59,5 @@\n     </div>\n   );\n };\n \n-export default ChatFeed;\n\\ No newline at end of file\n+export default ChatContent;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1644175144967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n       return (\n         <div key={`msg_${index}`} style={{ width: '100%' }}>\n           <div className=\"message-block\">\n-            {isMyMessage\n+            {isUserChat\n               ? <UserChat message={message} />\n               : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}\n           </div>\n           <div className=\"read-receipts\" style={{ marginRight: isUserChat ? '18px' : '0px', marginLeft: isUserChat ? '0px' : '68px' }}>\n"
+                },
+                {
+                    "date": 1644175186978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import UserChat from './UserChat';\n-import TheirMessage from './TheirMessage';\n+import RecepientChat from './TheirMessage';\n import MessageForm from './MessageForm';\n \n const ChatContent = (props) => {\n   const { chats, activeChat, userName, messages } = props;\n"
+                },
+                {
+                    "date": 1644175198262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import UserChat from './UserChat';\n-import RecepientChat from './TheirMessage';\n+import RecepientChat from './RecepientChat';\n import MessageForm from './MessageForm';\n \n const ChatContent = (props) => {\n   const { chats, activeChat, userName, messages } = props;\n"
+                },
+                {
+                    "date": 1644175272160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         <div key={`msg_${index}`} style={{ width: '100%' }}>\n           <div className=\"message-block\">\n             {isUserChat\n               ? <UserChat message={message} />\n-              : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}\n+              : <RecepientChat message={message} lastMessage={messages[lastMessageKey]} />}\n           </div>\n           <div className=\"read-receipts\" style={{ marginRight: isUserChat ? '18px' : '0px', marginLeft: isUserChat ? '0px' : '68px' }}>\n             {renderReadReceipts(message, isUserChat)}\n           </div>\n"
+                },
+                {
+                    "date": 1644175394064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import UserChat from './UserChat';\n import RecepientChat from './RecepientChat';\n-import MessageForm from './MessageForm';\n+import MessageForm from './ChatForm';\n \n const ChatContent = (props) => {\n   const { chats, activeChat, userName, messages } = props;\n \n"
+                },
+                {
+                    "date": 1644175415147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import UserChat from './UserChat';\n import RecepientChat from './RecepientChat';\n-import MessageForm from './ChatForm';\n+import ChatForm from './ChatForm';\n \n const ChatContent = (props) => {\n   const { chats, activeChat, userName, messages } = props;\n \n@@ -53,9 +53,9 @@\n       </div>\n       {renderMessages()}\n       <div style={{ height: '100px' }} />\n       <div className=\"message-form-container\">\n-        <MessageForm {...props} chatId={activeChat} />\n+        <ChatForm {...props} chatId={activeChat} />\n       </div>\n     </div>\n   );\n };\n"
+                }
+            ],
+            "date": 1644174535889,
+            "name": "Commit-0",
+            "content": "import MyMessage from './MyMessage';\nimport TheirMessage from './TheirMessage';\nimport MessageForm from './MessageForm';\n\nconst ChatFeed = (props) => {\n  const { chats, activeChat, userName, messages } = props;\n\n  const chat = chats && chats[activeChat];\n\n  const renderReadReceipts = (message, isMyMessage) => chat.people.map((person, index) => person.last_read === message.id && (\n    <div\n      key={`read_${index}`}\n      className=\"read-receipt\"\n      style={{\n        float: isMyMessage ? 'right' : 'left',\n        backgroundImage: person.person.avatar && `url(${person.person.avatar})`,\n      }}\n    />\n  ));\n\n  const renderMessages = () => {\n    const keys = Object.keys(messages);\n\n    return keys.map((key, index) => {\n      const message = messages[key];\n      const lastMessageKey = index === 0 ? null : keys[index - 1];\n      const isMyMessage = userName === message.sender.username;\n\n      return (\n        <div key={`msg_${index}`} style={{ width: '100%' }}>\n          <div className=\"message-block\">\n            {isMyMessage\n              ? <MyMessage message={message} />\n              : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}\n          </div>\n          <div className=\"read-receipts\" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>\n            {renderReadReceipts(message, isMyMessage)}\n          </div>\n        </div>\n      );\n    });\n  };\n\n  if (!chat) return <div />;\n\n  return (\n    <div className=\"chat-feed\">\n      <div className=\"chat-title-container\">\n        <div className=\"chat-title\">{chat?.title}</div>\n        <div className=\"chat-subtitle\">\n          {chat.people.map((person) => ` ${person.person.username}`)}\n        </div>\n      </div>\n      {renderMessages()}\n      <div style={{ height: '100px' }} />\n      <div className=\"message-form-container\">\n        <MessageForm {...props} chatId={activeChat} />\n      </div>\n    </div>\n  );\n};\n\nexport default ChatFeed;"
+        }
+    ]
+}
